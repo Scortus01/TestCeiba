@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestCeiba</string>
+    <string name="emptyList">List is empty</string>
+    <string name="show_publications">VER PUBLICACIONES</string>
+</resources>
