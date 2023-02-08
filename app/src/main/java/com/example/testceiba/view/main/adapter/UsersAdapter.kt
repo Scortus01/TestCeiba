@@ -5,14 +5,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testceiba.databinding.ItemUsersBinding
+import com.example.testceiba.domain.model.PublicationView
 import com.example.testceiba.domain.model.UserView
 
-class UsersAdapter: RecyclerView.Adapter<UserViewHolder>() {
+class UsersAdapter(
+    private val onItemClick: (Int, String, String, String) -> Unit
+) : RecyclerView.Adapter<UserViewHolder>() {
 
     private var users: List<UserView> = emptyList()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun onLoadUser(users: List<UserView>){
+    fun onLoadUser(users: List<UserView>) {
         this.users = users
         notifyDataSetChanged()
     }
@@ -24,6 +27,14 @@ class UsersAdapter: RecyclerView.Adapter<UserViewHolder>() {
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.bind(users[position])
+        holder.binding.tvShowPublications.setOnClickListener {
+            onItemClick(
+                users[position].userId,
+                users[position].userName,
+                users[position].userMail,
+                users[position].userPhone
+            )
+        }
     }
 
     override fun getItemCount(): Int = users.size

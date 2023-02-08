@@ -1,5 +1,6 @@
 package com.example.testceiba.data.model.server
 
+import com.example.testceiba.data.model.entity.UserEntity
 import com.example.testceiba.domain.model.UserView
 import com.google.gson.annotations.SerializedName
 
@@ -19,7 +20,15 @@ data class ApiUser(
         userName = name,
         userPhone = phone,
         userMail = email
-        )
+    )
+
+    fun mapperEntity(): UserEntity = UserEntity(
+        id = id,
+        name = name,
+        username = username,
+        email = email,
+        phone = phone
+    )
 }
 
 data class ApiAddress(

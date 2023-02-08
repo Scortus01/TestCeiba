@@ -43,7 +43,7 @@ android {
 dependencies {
 
     def retrofit_version = "2.9.0"
-    def hilt_version = "2.40.5"
+    def hilt_version = "2.42"
     def kotlinx_coroutines_version = "1.6.1"
     def lifecycle_ktx_version = "2.5.1"
     def room_version = '2.5.0'
@@ -79,4 +79,13 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$room_version"
+
+    testImplementation 'io.mockk:mockk:1.12.2'
+    androidTestImplementation 'io.mockk:mockk-android:1.12.2'
+
+    testImplementation 'androidx.test:runner:1.2.0'
+    testImplementation 'androidx.test:rules:1.2.0'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.6.4"
+
 }

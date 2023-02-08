@@ -1,5 +1,6 @@
 package com.example.testceiba.di
 
+import com.example.testceiba.data.network.PublicationService
 import com.example.testceiba.data.network.UserService
 import dagger.Module
 import dagger.Provides
@@ -26,6 +27,12 @@ object NetworkModule {
     @Provides
     fun providerQuoteApiClient(retrofit: Retrofit): UserService {
         return retrofit.create(UserService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideQuoteApiPublication(retrofit: Retrofit): PublicationService{
+        return retrofit.create(PublicationService::class.java)
     }
 }
 

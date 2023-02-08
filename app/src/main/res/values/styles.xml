@@ -14,4 +14,18 @@
         <item name="android:textSize">@dimen/_14sdp</item>
     </style>
 
+    <style name="textShowPublication">
+        <item name="android:textColor">@color/dark_primary</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/_9sdp</item>
+    </style>
+
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">@color/dark_primary</item>
+        <item name="submitBackground">@color/dark_primary</item>
+        <item name="android:textColor">@color/dark_primary</item>
+        <item name="textColorSearchUrl">@color/dark_primary</item>
+        <item name="searchHintIcon">@drawable/ic_search</item>
+    </style>
+
 </resources>

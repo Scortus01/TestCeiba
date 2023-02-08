@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:padding="@dimen/_15sdp"
+    tools:context=".view.publications.PublicationsActivity">
+
+    <TextView
+        android:id="@+id/tvNamePublication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/textViewBold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvPhonePublication"/>
+
+    <TextView
+        android:id="@+id/tvPhonePublication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/textViewDefault"
+        app:layout_constraintTop_toBottomOf="@id/tvNamePublication"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvMailPublication"/>
+
+    <TextView
+        android:id="@+id/tvMailPublication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/textViewDefault"
+        app:layout_constraintTop_toBottomOf="@id/tvPhonePublication"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rvPublication"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPublication"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        app:layout_constraintTop_toBottomOf="@id/tvMailPublication"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_publication"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
